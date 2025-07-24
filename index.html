@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hanlingo – Learn Korean</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join immersive Korean courses with expert instructors and flexible learning." />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🌐 Language Selector -->
+  <div class="lang-selector">
+    <label for="languageSelector" aria-label="Language selector">🌐</label>
+    <select id="languageSelector">
+      <option value="uz">O'zbekcha</option>
+      <option value="en" selected>English</option>
+      <option value="ru">Русский</option>
+    </select>
+  </div>
+
+  <!-- 🚀 Hero Section -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1 data-key="title">Learn Korean from Experts</h1>
+      <p class="subtitle" data-key="subtitle">
+        Join our immersive language courses and speak confidently from day one.
+      </p>
+      <a href="register.html" class="cta" data-key="register">Register Now</a>
+    </div>
+    <div class="hero-media">
+      <img src="./assets/images/illustration.png" alt="Illustration of learning languages" />
+
+      <!-- 🔁 Rotating Banner -->
+      <section class="banner-slider">
+        <div class="banner active" aria-hidden="false">
+          <h2>🇰🇷 Experience Korean Culture</h2>
+          <p>From K-dramas to daily life—learn beyond the language.</p>
+        </div>
+        <div class="banner" aria-hidden="true">
+          <h2> Learn from Experienced Instructors</h2>
+          <p>Our team lives in Korea and brings real-world experience to class.</p>
+        </div>
+        <div class="banner" aria-hidden="true">
+          <h2> Live meetings</h2>
+          <p>Both online and in classroom.</p>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <!-- ✨ Features -->
+  <section class="features">
+    <h2>Why Learn with Hanlingo?</h2>
+    <div class="feature-item">
+      <h3>Expert Instructors</h3>
+      <p>Learn Korean from experienced teachers living in Korea.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Interactive Lessons</h3>
+      <p>Enjoy gamified exercises, real-life conversations, and cultural insights.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Flexible Schedule</h3>
+      <p>Attend classes on your own time with 24/7 access to materials and recordings.</p>
+    </div>
+  </section>
+
+  <!-- 💬 Testimonial -->
+  <section class="testimonial">
+    <p class="quote">
+      "Hanlingo – Towards Opportunities Through Language!"
+    </p>
+    <p class="author">– Hanlingo</p>
+  </section>
+
+  <!-- 📩 Footer CTA -->
+  <footer class="footer-cta">
+    <p>Ready to start your Korean learning journey?</p>
+    <a href="register.html" class="cta">Register for a Class</a>
+  </footer>
+
+  <!-- 🔧 Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 🌐 Language switching logic
+      const dropdown = document.getElementById("languageSelector");
+      const savedLang = localStorage.getItem("lang") || "en";
+      if (dropdown) dropdown.value = savedLang;
+      loadLanguage(savedLang);
+
+      if (dropdown) {
+        dropdown.addEventListener("change", (e) => {
+          const lang = e.target.value;
+          loadLanguage(lang);
+          localStorage.setItem("lang", lang);
+        });
+      }
+
+      function loadLanguage(lang) {
+        fetch(`lang/${lang}.json`)
+          .then(res => res.ok ? res.json() : Promise.reject(`No lang file: ${lang}`))
+          .then(data => {
+            document.querySelectorAll("[data-key]").forEach(el => {
+              const key = el.getAttribute("data-key");
+              if (data[key]) el.textContent = data[key];
+            });
+            document.querySelectorAll("[data-placeholder]").forEach(el => {
+              const key = el.getAttribute("data-placeholder");
+              if (data[key]) el.placeholder = data[key];
+            });
+          })
+          .catch(err => console.error("Language load error:", err));
+      }
+
+      // 🔁 Rotating banner logic
+      const banners = document.querySelectorAll(".banner-slider .banner");
+      let current = 0;
+      setInterval(() => {
+        banners[current].classList.remove("active");
+        banners[current].setAttribute("aria-hidden", "true");
+        current = (current + 1) % banners.length;
+        banners[current].classList.add("active");
+        banners[current].setAttribute("aria-hidden", "false");
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

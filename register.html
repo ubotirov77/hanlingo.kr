@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register – Hanlingo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Language Selector -->
+  <div class="lang-selector">
+    <label for="languageSelector">🌐</label>
+    <select id="languageSelector">
+      <option value="uz">O'zbekcha</option>
+      <option value="en" selected>English</option>
+      <option value="ru">Русский</option>
+    </select>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <img src="./assets/images/illustration.png" alt="Hanlingo Logo" class="logo" />
+      <ul class="nav-links">
+        <li><a href="index.html" data-key="navHome">Home</a></li>
+        <li><a href="index.html#courses" data-key="navCourses">Courses</a></li>
+        <li><a href="index.html#about" data-key="navAbout">Why Hanlingo</a></li>
+        <li><a href="register.html" class="btn-register" data-key="navRegister">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Register Section -->
+  <section class="register-section">
+    <div class="container form-container">
+      <h1 data-key="registerTitle">Register for Korean Classes</h1>
+      <p class="subtitle" data-key="registerSubtitle">Fill in the form below and we’ll contact you soon.</p>
+
+      <form class="register-form">
+        <label data-key="labelName" for="name">Full Name</label>
+        <input type="text" id="name" name="name" required data-placeholder="namePlaceholder" placeholder="Your name">
+
+        <label data-key="labelEmail" for="email">Email</label>
+        <input type="email" id="email" name="email" required data-placeholder="emailPlaceholder" placeholder="Your email">
+
+        <label data-key="labelLevel" for="level">Select Level</label>
+        <select id="level" name="level">
+          <option value="beginner" data-key="beginnerOption">Beginner</option>
+          <option value="pre-intermediate" data-key="preIntermediateOption">Pre-Intermediate</option>
+        </select>
+
+        <label data-key="labelMessage" for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Any message or questions..."></textarea>
+
+        <button type="submit" class="cta" data-key="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Hanlingo. <span data-key="footerRights">All rights reserved.</span></p>
+    </div>
+  </footer>
+</body>
+</html>
