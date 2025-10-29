@@ -31,10 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (banners.length > 0) {
     let current = 0;
 
+    banners.forEach((banner, index) => {
+      banner.setAttribute("aria-hidden", index === 0 ? "false" : "true");
+    });
+
     setInterval(() => {
       banners[current].classList.remove("active");
+      banners[current].setAttribute("aria-hidden", "true");
       current = (current + 1) % banners.length;
       banners[current].classList.add("active");
+      banners[current].setAttribute("aria-hidden", "false");
     }, 3000);
   }
 });
