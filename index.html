@@ -7,6 +7,7 @@
   <meta name="description" content="Join immersive Korean courses with expert instructors and flexible learning." />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <!-- 🌐 Language Selector -->
@@ -19,41 +20,79 @@
     </select>
   </div>
 
-  <!-- 🚀 Hero Section -->
-  <header class="hero-section">
-    <div class="hero-content">
-      <h1 data-key="title">Learn Korean from Experts</h1>
-      <p class="subtitle" data-key="subtitle">
-        Join our immersive language courses and speak confidently from day one.
-      </p>
-      <a href="register.html" class="cta" data-key="register">Register Now</a>
+  <!-- 🧭 Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <img src="./assets/images/illustration.png" alt="Hanlingo Logo" class="logo" />
+      <ul class="nav-links">
+        <li><a href="#top" data-key="navHome">Home</a></li>
+        <li><a href="#courses" data-key="navCourses">Courses</a></li>
+        <li><a href="#about" data-key="navAbout">Why Hanlingo</a></li>
+        <li><a href="register.html" class="btn-register" data-key="navRegister">Register</a></li>
+      </ul>
     </div>
-    <div class="hero-media">
-      <img src="./assets/images/illustration.png" alt="Illustration of learning languages" />
+  </nav>
 
-      <!-- 🔁 Rotating Banner -->
-      <section class="banner-slider">
-        <div class="banner active" aria-hidden="false">
-          <h2 data-key="banner1Title">🇰🇷 Experience Korean Culture</h2>
-          <p data-key="banner1Text">From K-dramas to daily life—learn beyond the language.</p>
-        </div>
-        <div class="banner" aria-hidden="true">
-          <h2 data-key="banner2Title">Learn from Experienced Instructors</h2>
-          <p data-key="banner2Text">Our team lives in Korea and brings real-world experience to class.</p>
-        </div>
-        <div class="banner" aria-hidden="true">
-          <h2 data-key="banner3Title">Live Meetings</h2>
-          <p data-key="banner3Text">Both online and in classroom.</p>
-        </div>
-      </section>
-    </div>
-  </header>
+  <main id="top">
+    <!-- 🚀 Hero Section -->
+    <header class="hero-section">
+      <div class="hero-content">
+        <h1 data-key="title">Learn Korean from Experts</h1>
+        <p class="subtitle" data-key="subtitle">
+          Join our immersive language courses and speak confidently from day one.
+        </p>
+        <a href="register.html" class="cta" data-key="register">Register Now</a>
+      </div>
+      <div class="hero-media">
+        <img src="./assets/images/illustration.png" alt="Illustration of learning languages" />
 
-  <!-- ✨ Features -->
-  <section class="features">
-    <h2 data-key="featuresTitle">Why Learn with Hanlingo?</h2>
-    <div class="feature-item">
-      <h3 data-key="feature1Title">Expert Instructors</h3>
+        <!-- 🔁 Rotating Banner -->
+        <section class="banner-slider">
+          <div class="banner active" aria-hidden="false">
+            <h2 data-key="banner1Title">🇰🇷 Experience Korean Culture</h2>
+            <p data-key="banner1Text">From K-dramas to daily life—learn beyond the language.</p>
+          </div>
+          <div class="banner" aria-hidden="true">
+            <h2 data-key="banner2Title">Learn from Experienced Instructors</h2>
+            <p data-key="banner2Text">Our team lives in Korea and brings real-world experience to class.</p>
+          </div>
+          <div class="banner" aria-hidden="true">
+            <h2 data-key="banner3Title">Live Meetings</h2>
+            <p data-key="banner3Text">Both online and in classroom.</p>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <!-- 📘 Courses -->
+    <section class="courses" id="courses">
+      <div class="container">
+        <div class="courses-header">
+          <h2 data-key="coursesTitle">Courses for Every Goal</h2>
+          <p data-key="coursesSubtitle">Choose the program that fits your schedule and learning style.</p>
+        </div>
+        <div class="course-grid">
+          <article class="course-card">
+            <h3 data-key="course1Title">Beginner Foundations</h3>
+            <p data-key="course1Text">Master Hangul, essential grammar, and daily conversation basics.</p>
+          </article>
+          <article class="course-card">
+            <h3 data-key="course2Title">Conversation Club</h3>
+            <p data-key="course2Text">Practice speaking with native coaches in weekly live sessions.</p>
+          </article>
+          <article class="course-card">
+            <h3 data-key="course3Title">TOPIK Prep</h3>
+            <p data-key="course3Text">Boost your exam confidence with targeted strategies and mock tests.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✨ Features -->
+    <section class="features" id="about">
+      <h2 data-key="featuresTitle">Why Learn with Hanlingo?</h2>
+      <div class="feature-item">
+        <h3 data-key="feature1Title">Expert Instructors</h3>
       <p data-key="feature1Text">Learn Korean from experienced teachers living in Korea.</p>
     </div>
     <div class="feature-item">
@@ -66,19 +105,20 @@
     </div>
   </section>
 
-  <!-- 💬 Testimonial -->
-  <section class="testimonial">
-    <p class="quote" data-key="testimonialQuote">
-      "Hanlingo – Towards Opportunities Through Language!"
-    </p>
-    <p class="author" data-key="testimonialAuthor">– Hanlingo</p>
-  </section>
+    <!-- 💬 Testimonial -->
+    <section class="testimonial">
+      <p class="quote" data-key="testimonialQuote">
+        "Hanlingo – Towards Opportunities Through Language!"
+      </p>
+      <p class="author" data-key="testimonialAuthor">– Hanlingo</p>
+    </section>
 
-  <!-- 📩 Footer CTA -->
-  <footer class="footer-cta">
-    <p data-key="footerCtaText">Ready to start your Korean learning journey?</p>
-    <a href="register.html" class="cta" data-key="footerCtaButton">Register for a Class</a>
-  </footer>
+    <!-- 📩 Footer CTA -->
+    <footer class="footer-cta">
+      <p data-key="footerCtaText">Ready to start your Korean learning journey?</p>
+      <a href="register.html" class="cta" data-key="footerCtaButton">Register for a Class</a>
+    </footer>
+  </main>
 
   <!-- 🔧 Script -->
   <script defer src="script.js"></script>

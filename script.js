@@ -52,6 +52,7 @@ function loadLanguage(lang) {
       return res.json();
     })
     .then(data => {
+      document.documentElement.lang = lang;
       document.querySelectorAll("[data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (data[key]) el.textContent = data[key];

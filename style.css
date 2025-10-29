@@ -11,6 +11,12 @@ body {
   color: #2b2b2b;
 }
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 /* LANGUAGE SELECTOR */
 .lang-selector {
   position: fixed;
@@ -31,6 +37,63 @@ body {
   background: transparent;
   font-size: 1em;
   cursor: pointer;
+}
+
+/* NAVIGATION */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links li {
+  display: flex;
+}
+
+.nav-links li a {
+  font-weight: 600;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #1570ef;
+}
+
+.btn-register {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: #1570ef;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(21, 112, 239, 0.28);
+}
+
+.btn-register:hover,
+.btn-register:focus {
+  background: #0f5ed7;
+  color: #fff;
 }
 
 /* HERO SECTION */
@@ -114,6 +177,58 @@ body {
   color: #444;
 }
 
+/* COURSES */
+.courses {
+  padding: 4rem 1.5rem;
+  background: #ffffff;
+}
+
+.courses-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.courses-header h2 {
+  font-size: 2.2rem;
+  color: #104f93;
+  margin-bottom: 0.75rem;
+}
+
+.courses-header p {
+  color: #475569;
+  font-size: 1.05rem;
+}
+
+.course-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.course-card {
+  background: linear-gradient(160deg, #f3f7ff, #ffffff);
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+}
+
+.course-card h3 {
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.course-card p {
+  color: #475569;
+  font-size: 1rem;
+}
+
 /* FEATURES */
 .features {
   padding: 4rem 2rem;
@@ -195,17 +310,6 @@ body {
 /* NAVBAR ICONS */
 .navbar .logo {
   height: 40px;
-}
-.nav-links li a {
-  font-weight: 500;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.2s ease;
-}
-.nav-links li a:hover {
-  color: #007BFF;
 }
 .nav-links li a[data-key="navHome"]::before {
   content: "\f015";
@@ -293,6 +397,17 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .hero-section {
     flex-direction: column;
     text-align: center;
